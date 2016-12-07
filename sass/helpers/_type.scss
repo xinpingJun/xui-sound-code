@@ -1,0 +1,38 @@
+@charset "UTF-8";
+// 更改margin
+h1, h2, h3, h4, h5, h6, p, figure, form, blockquote {
+    margin: 0;
+}
+h1{ font-size: 24px; }
+h2{ font-size: 20px; }
+h3{ font-size: 18px; }
+h4{ font-size: 16px; }
+h5{ font-size: 14px; color: #8f8f94;font-weight: normal; }
+h6{ font-size: 12px; color: #8f8f94;font-weight: normal; }
+
+// Paragraphs
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 14px;
+  color: #8f8f94;
+}
+//重要段落
+.#{$namespace}lead{font-size: 16px;font-weight: 300;}
+//小号文本
+.#{$namespace}small{font-size:12px;color: #8f8f94;}
+// 大号文本
+.#{$namespace}large{font-size: 18px;}
+
+.#{$namespace}mask{ padding: .1rem;background-color: #fff0d5;}
+
+
+// ul ol dl
+ul, ol, li, dl, dd {
+    margin: 0;
+    padding: 0;
+}
+
+ul, ol {
+    list-style: none outside none;
+}

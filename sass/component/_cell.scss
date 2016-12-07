@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+$cellNum:           4 !default;
+$cellIconSize:      24px !default; //待修改 	
+$cellPadding:       15px !default; // 非正方形格式，上下padding
+
+$cellSquareSwitch:  true !default; // 正方形格子
+
+.#{$namespace}cell-list{
+	background: #fff;
+	position: relative;
+	overflow: hidden;
+	&::before{
+		content: "";
+		@include retina-one-px-border(top);
+	}
+	.#{$namespace}cell-item{
+		float: left;
+		width: 100% / $cellNum;
+		text-align: center;
+		position: relative;
+		padding: $cellPadding 0;
+		&::before{
+			content: "";
+			@include retina-one-px-border(bottom);
+		}
+		&::after{
+			content: "";
+			@include retina-one-px-border(right);
+		}
+		&:nth-of-type(#{$cellNum}n) {
+			&::after{
+				display: none;
+			}
+		}
+		.#{$namespace}item-icon{
+			width: $cellIconSize;
+			height: $cellIconSize;
+			font-size:24px;
+			color:$primary-color;
+		}
+	}
+}
+
+@if $cellSquareSwitch {
+	.#{$namespace}cell-list-square {
+		.#{$namespace}cell-item{
+			padding-top: 100% / $cellNum;
+			padding-bottom: 0;
+			height: 0;
+		}
+		.#{$namespace}item-inner{
+			position: absolute;
+			width: 100%;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
+}
