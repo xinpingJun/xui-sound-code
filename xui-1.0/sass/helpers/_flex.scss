@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+/*
+*（参考mzui flex布局 http://zui.sexy/m/index.html）
+*弹性盒子具体应用可以参考 https://xinpingjun.github.io/flexbox/
+*/
+// 应用于弹性盒子容器
+// display
+.#{$namespace}flex        {display: flex!important;}
+.#{$namespace}flex-inline {display: inline-flex!important;}
+
+// flex-direction
+// 垂直排列 水平排列 方向
+.#{$namespace}flex-row       {flex-direction: row;}
+.#{$namespace}flex-column    {flex-direction: column;}
+.#{$namespace}row-reverse    {flex-direction: row-reverse;}
+.#{$namespace}column-reverse {flex-direction: column-reverse;}
+
+// flex-wrap
+// 换行
+.#{$namespace}flex-wrap   {flex-wrap: wrap;}
+.#{$namespace}flex-nowrap {flex-wrap: nowrap;}
+
+// justify-content
+// x轴两端对齐 左对齐 右对齐 居中
+.#{$namespace}space-between  {justify-content: space-between;}
+.#{$namespace}justify-start  {justify-content: flex-start;}
+.#{$namespace}justify-end    {justify-content: flex-end;}
+.#{$namespace}justify-center {justify-content: center;}
+
+// align-items
+// Y轴 展开 上对齐 下对齐 垂直居中
+.#{$namespace}stretch      {align-items: stretch;}
+.#{$namespace}align-start  {align-items: flex-start;}
+.#{$namespace}align-end    {align-items: flex-end;}
+.#{$namespace}align-middle {align-items: center;}
+
+// 水平垂直居中
+.#{$namespace}flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+// 使用弹性盒布局，且内部元素自动调整大小并填充水平空间，
+.#{$namespace}justified {
+  display: flex;
+  flex-wrap: wrap;
+  > * {flex: auto !important;}
+  > .#{$namespace}flex-none {flex: none!important}
+}
+// 以下辅助类应用于弹性盒子元素：
+// order
+// 子元素排列顺序
+// 
+.#{$namespace}flex-first {order: -1;}
+.#{$namespace}flex-last  {order: 1;}
+
+// flex
+// 子元素空间分布
+.#{$namespace}flex-auto  {flex: auto;}
+.#{$namespace}flex-none  {flex: none;}
+
+// align-self
+// 子元素 单个垂直排列方式
+.#{$namespace}selft-stretch      {align-self: stretch;}
+.#{$namespace}align-self-start   {align-self: flex-start;}
+.#{$namespace}align-self-end     {align-self: flex-end;}
+.#{$namespace}align-self-middle  {align-self: center;}

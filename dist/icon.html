@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+	<link rel="stylesheet" href="css/xui.css">
+	<script src='js/holder.min.js'></script>
+	<script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+		<style>
+		.xui-content .xui-header{
+			position:relative;
+		}
+		.title{
+			font-size:32px;
+			color: #607D8B;
+			margin:25px 0;
+			text-align: center;
+			text-transform:capitalize;
+		}
+		i{	display: inline-block;
+			margin:10px 5px;
+		}
+	</style>
+</head>
+<body>
+	<header class="xui-header">
+		<div class="xui-header-pull-left"><a href="" class="xui-icon xui-icon-return"></a></div>
+		<h1 class="xui-title">图标，按钮 </h1>
+	</header>
+	<section class="xui-content">
+		<h1 class="title">icon</h1>
+		<i class="xui-icon xui-icon-return"></i>
+		<i class="xui-icon xui-icon-go"></i>
+		<i class="xui-icon xui-icon-close"></i>
+		<i class="xui-icon xui-icon-dowm"></i>
+		<i class="xui-icon xui-icon-add"></i>
+		<i class="xui-icon xui-icon-delete"></i>
+		<i class="xui-icon xui-icon-search"></i>
+		<i class="xui-icon xui-icon-set"></i>
+		<i class="xui-icon xui-icon-back-cricle"></i>
+
+
+		<i class="xui-icon xui-icon-checkbox"></i>
+		<i class="xui-icon xui-icon-checkbox xui-active"></i>
+
+
+		<i class="xui-icon xui-icon-radio"></i>
+		<i class="xui-icon xui-icon-radio xui-active"></i>
+
+		<i class="xui-icon-switch"></i>
+		<i class="xui-icon-switch xui-active"></i>
+	</section>
+	<script>
+	$(function(){
+	
+		$(".xui-icon-switch").click(function(){
+				$(this).toggleClass("xui-active")
+		})
+	})
+	</script>
+
+</body>
+</html>

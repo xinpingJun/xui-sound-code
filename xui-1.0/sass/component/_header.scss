@@ -1,0 +1,146 @@
+@charset "UTF-8";
+
+// 注释-----超出隐藏可以写函数
+// 
+// header 导航栏
+// 变量
+$headerHeight:      $barHeight !default;
+$headerBgColor:     $primary-color !default;
+$headerTextColor:   #fff !default;
+$headerAColor:      #fff !default;
+
+
+.#{$namespace}header{
+    top: 0;
+    height: $headerHeight;
+    line-height: $headerHeight;
+    text-align: center;
+    background-color: $headerBgColor;
+    color: $headerTextColor;
+    z-index: z("bar","bar");
+    @extend %box-shadow;
+    // 导航标题
+    // -------------------------------------------
+    .#{$namespace}title,.#{$namespace}title-two{
+        position: absolute;
+        font-size: 18px;
+        left: 88px;
+        right: 88px;
+    }
+    .#{$namespace}title{
+        font-weight: $font-weight;
+        line-height: $headerHeight;
+        color: #fff;
+        text-align: center;
+        width: auto;
+        margin: 0;
+        display: inline-block;
+        @extend %ellipsis;
+    }
+      // 两行标题
+      // ------------------------------------------
+    .#{$namespace}title-two{
+            font-size: 14px;
+            line-height: 22px;
+            box-sizing: border-box;
+            overflow : hidden;    
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 2;
+            height: $headerHeight;
+    }
+    // tab 标题
+    // --------------------------------------------
+    .#{$namespace}title-tab{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0,0,0,.2);
+            border-radius: 5px;
+            line-height: 30px;
+            padding: 1px;
+            font-size: 14px;
+            .#{$namespace}tt-option {
+                float: left;
+                padding: 0 15px;
+                color: $headerTextColor;
+                &.#{$namespace}active {
+                    background-color: $headerTextColor;
+                    color: $headerBgColor;
+                }
+                &:first-of-type{
+                    border-radius: 5px 0 0 5px;
+                }
+                &:last-of-type {
+                    border-radius: 0 5px 5px 0;
+                }
+            }
+        
+    }
+
+    // 左右按钮
+    // --------------------------------------------------
+    .#{$namespace}header-pull-left{
+        float: left;
+        height: $headerHeight;
+        z-index: z("bar","icon");
+        .#{$namespace}more-text{
+            color:$headerAColor;
+            width:60px !important;
+          .#{$namespace}text-mix{
+            display:inline-block;
+            font-size:16px;
+            height:44px;
+            line-height:44px;
+            vertical-align:middle;
+            }
+        }
+    }
+    
+   .#{$namespace}header-pull-right{
+        float: right;
+        height: $headerHeight;
+
+        // 导航字体菜单样式
+       .#{$namespace}header-btn{
+            display:block;
+             width:44px;
+             height:44px;
+             color:$headerAColor;
+             z-index:z("bar","icon");
+             &:hover {
+                color:#fff;
+                background-color: darken($headerBgColor, 10%);
+            }// 设置点击时的背景颜色
+        }
+    }
+    // 导航图标按钮样式
+    // -------------------------------------------------------------
+    .#{$namespace}header-pull-left,.#{$namespace}header-pull-right{
+
+        .#{$namespace}icon{
+            display:block;
+            width:44px;
+            height:44px;
+            cursor: pointer;
+            font-size:22px;
+            color:$headerAColor;
+            z-index:z("bar","icon");
+            &:hover {
+                color:#fff;
+                background-color: darken($headerBgColor, 10%);
+            }
+        }
+    }
+    // 搜索框
+    // ---------------------------------
+    .#{$namespace}search-block{
+        line-height:1;
+        padding:0 44px;
+        background-color:transparent;
+        position: absolute;
+        width:100%;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}

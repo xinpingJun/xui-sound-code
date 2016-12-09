@@ -3,7 +3,6 @@
 $cellNum:           4 !default;
 $cellIconSize:      24px !default; //待修改 	
 $cellPadding:       15px !default; // 非正方形格式，上下padding
-
 $cellSquareSwitch:  true !default; // 正方形格子
 
 .#{$namespace}cell-list{

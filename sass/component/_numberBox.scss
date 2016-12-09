@@ -1,0 +1,124 @@
+@charset "UTF-8";
+
+$stepperWidth:          100px !default;
+$stepperHeight:         30px !default;
+$stepperTextColor:      #666 !default;
+$stepperBtnBg:          #fff !default;
+$stepperBorderColor:    $colorBorder !default; 
+$stepperRadius:         5px !default;
+
+$stepperMinSwitch:      true !default;
+
+$stepperCirclSwitch1: true !default;
+$stepperCirclSwitch2: true !default;
+
+
+
+.#{$namespace}numberBox{
+	position: relative;
+	padding: 0 $stepperHeight;
+	width: $stepperWidth;
+	background: $stepperBtnBg;
+	@if $stepperRadius{
+		border-radius: $stepperRadius;
+	}
+	.#{$namespace}numberBox-plus,
+	.#{$namespace}numberBox-minus{
+		position: absolute;
+		top: 0;
+		border: 1px solid $stepperBorderColor;
+		height: $stepperHeight;
+		width: $stepperHeight;
+		color: $stepperTextColor;
+	}
+	.#{$namespace}numberBox-plus{
+		right: 0;
+		@if $stepperRadius{
+			border-radius: 0 $stepperRadius $stepperRadius 0;
+		}
+		&::before,
+		&::after{
+			content: "";
+			height: 2px;
+			width: 12px;
+			background: currentColor;
+			@include center-translate(both);
+		}
+		&::after{
+			height: 12px;
+			width: 2px;
+		}
+	}
+	.#{$namespace}numberBox-minus{
+		left: 0;
+		@if $stepperRadius{
+			border-radius: $stepperRadius 0 0 $stepperRadius;
+		}
+		&::before{
+			content: "";
+			height: 2px;
+			width: 12px;
+			background: currentColor;
+			@include center-translate(both);
+		}
+	}
+	.#{$namespace}numberBox-num{
+		width: 100%;
+		border: 1px solid $stepperBorderColor;
+		border-width: 1px 0;
+		height: $stepperHeight;
+		text-align: center;
+	}
+}
+// 无输入框数字输入框
+@if $stepperMinSwitch{
+	.#{$namespace}numberBox--mini{
+		width: $stepperHeight * 2;
+		height: $stepperHeight;
+		.#{$namespace}numberB-plus{
+			border-left: 0;
+		}
+	}
+}
+// 圆形数字输入框
+@if $stepperCirclSwitch2{
+
+	.#{$namespace}numberBox--circle{
+		border-radius: 25px;
+		.#{$namespace}numberBox-num{
+			border:none;
+		}
+		.#{$namespace}numberBox-plus,
+		.#{$namespace}numberBox-minus{
+			@if $stepperRadius{
+				border-radius: 100px;
+			}
+		}
+	}
+}
+
+// 圆形数字输入框单个按钮
+@if $stepperCirclSwitch1{
+
+	.#{$namespace}numberBox--circle-one{
+		border-radius: 25px;
+		background-color:transparent;
+		.#{$namespace}numberBox-num{
+			border:none;
+		    visibility: hidden;
+
+		}
+		.#{$namespace}numberBox-minus{
+		    visibility: hidden;
+		}
+		.#{$namespace}numberBox-plus,
+		.#{$namespace}numberBox-minus{
+			@if $stepperRadius{
+				border-radius: 100px;
+				background: $stepperBtnBg;
+			}
+		}
+	}
+}
+
+

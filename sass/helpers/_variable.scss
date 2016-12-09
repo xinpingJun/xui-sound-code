@@ -45,9 +45,7 @@ $card-font-size:14px !default;
 $card-media-body-margin-left:44px !default;
 $card-footer-color:#6d6d72 !default;
 
-// 按钮
-// --------------------------------------------------
-$button-font-size: 14px !default;
+
 // 转换
 // --------------------------------------------------
 $timing-fuction: cubic-bezier(.1,.5,.1,1) !default; // Inspired by @c2prods
@@ -60,3 +58,13 @@ $border-radius: 6px !default;
 //-----------------------------------------------------
 $radiusBase:                      5px !default;
 $radiusSmall:                     3px !default;
+// Color list
+
+$color-white:                #fff;
+$color-black:                #000;
+$color-red:                  #ea644a;
+$color-yellow:               #f1a325;
+$color-green:                #38b03f;
+$color-blue:                 #03b8cf;
+$color-purple:               #03b8cf;
+$color-brown:                #bd7b46;
