@@ -23,8 +23,6 @@
 @import  "helpers/type";
 // flex 布局
 @import "helpers/flex";
-// 栅格栏
-@import "helpers/grid";
 
 // ui组件 
 // -------------------------------------
@@ -50,7 +48,6 @@
 @import "component/panel";
 // 列表（未查看）
 @import "component/list";
+
 // 图文列表
 @import "component/media";
-// 数字加减
-@import "component/numberBox";

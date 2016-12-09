@@ -14,8 +14,7 @@ $colorBorder:        #dbdbdb !default;
 		font-weight: bold;
 	}
 // 段落
-	.#{$namespace}article-p{
-		text-indent:2em;
+	p{
 		margin-bottom: $articleMargin;
 	}
 // 文章图片
@@ -27,7 +26,6 @@ $colorBorder:        #dbdbdb !default;
 			padding: 2px;
 		}
 	}
-	
 // 有序列表和无序列表
 	.#{$namespace}list-disc,
 	.#{$namespace}list-decimal{

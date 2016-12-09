@@ -17,23 +17,6 @@
     @include ellipsis(false);
 }
 
-// translate center
-@mixin center-translate($direction: both) {
-    position: absolute;
-    @if $direction == both {
-        top: 50%;
-        left: 50%;
-        transform: translate3d(-50%, -50%, 0);
-    }
-    @else if $direction == x {
-        left: 50%;
-        transform: translate3d(-50%, 0, 0);
-    }
-    @else if $direction == y {
-        top: 50%;
-        transform: translate3d(0, -50%, 0);
-    }
-}
 
 
 
@@ -151,7 +134,7 @@
 // 只定义了%，所以只能通过@extend来调用
 //-----------------------------------------------------
  $activeStateSwitch :true;
-// bar line 列表
+// bar line
 %bar-line {
     line-height: $barHeight - 10px;
     padding: 5px 10px;

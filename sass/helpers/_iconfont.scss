@@ -38,7 +38,7 @@
 
 .#{$namespace}icon-user:before { content: "\e6ff"; }
 
-
+.#{$namespace}icon-message:before { content: "\e615"; }
 
 .#{$namespace}icon-close:before { content: "\e603"; }
 
@@ -77,81 +77,3 @@
 .#{$namespace}icon-panel:before { content: "\e617"; }
 
 .#{$namespace}icon-type:before { content: "\e646"; }
-.#{$namespace}icon-message:before { content: "\e7c0"; }
-.#{$namespace}icon-gril:before { content: "\e60d"; }
-.#{$namespace}icon-assist:before { content: "\e686"; }
-.#{$namespace}icon-flex:before { content: "\e610"; }
-.#{$namespace}icon-iconfont:before { content: "\e606"; }
-.#{$namespace}icon-number:before { content: "\e637"; }
-// 单选框，复选框，开关
-.#{$namespace}icon-checkbox,.#{$namespace}icon-radio{
-    @include transition(all);
-    @include transition-duration(.2s);
-    @include transition-timing-function(linear);
-}
-.#{$namespace}icon-checkbox{
-	&.#{$namespace}active{
-		&::before{
-			content:"\e721"
-		}
-	}
-}
-
-.#{$namespace}icon-radio{
-	&.#{$namespace}active{
-		&::before{
-			content:"\e71e"
-		}
-	}
-}
-
-.#{$namespace}icon-switch {
-		height: 30px;
-		width: 50px;
-		position: relative;
-		display: inline-block;
-		vertical-align: middle;
-		background-color: #ccc;
-		border-radius: 15px;
-		overflow: hidden;
-		z-index: 1;
-
-    @include transition(all);
-    @include transition-duration(.2s);
-    @include transition-timing-function(linear);
-}
-
-.#{$namespace}icon-switch::before {
-		content: "";
-		height: 30px;
-		width: 50px;
-		position: absolute;
-		left: -50px;
-		background-color: $primary-color;
-		border-radius: 15px;
-		-webkit-transition: left 0.2s ease 0s;
-		transition: left 0.2s ease 0s;
-		z-index: 2;
-}
-
-.#{$namespace}icon-switch::after {
-		  content: "";
-		  height: 26px;
-		  width: 26px;
-		  background-color: #fff;
-		  border-radius: 15px;
-		  position: absolute;
-		  left: 2px;
-		  top: 2px;
-		  -webkit-transition: left 0.2s ease 0s;
-		  transition: left 0.2s ease 0s;
-		  z-index: 3;
-}
-
-.#{$namespace}icon-switch.#{$namespace}active::before {
-  left: 0;
-}
-
-.#{$namespace}icon-switch.#{$namespace}active::after {
-  left: 22px;
-}

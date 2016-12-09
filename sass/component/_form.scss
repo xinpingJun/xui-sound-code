@@ -2,6 +2,7 @@
 
 
 $formLabelWidth: 90px !default;
+
 $formNoLabelSwitch: true !default;
 
 
@@ -12,7 +13,8 @@ $formNoLabelSwitch: true !default;
     border: 1px solid $colorBorder;
 }
 
-.#{$namespace}f-text{   
+.#{$namespace}f-text{
+    
     height: $barHeight;
     padding: 7px 5px;
     &.#{$namespace}f-text-right-icon{

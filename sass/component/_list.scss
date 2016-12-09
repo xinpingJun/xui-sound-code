@@ -14,27 +14,24 @@ $lineVIconSwitch:          false !default; // icon v
         margin-top: 10px;
     }
 }
-
-.#{$namespace}line-list-center {
+.#{$namespace}line-list--center {
     text-align: center;
 }
-
-.#{$namespace}line-list-indent {
+.#{$namespace}line-list--indent {
     @extend %border-tb;
     .#{$namespace}line-item::before {
         left: 10px;
     }
 }
 
-.#{$namespace}line-list-after-v {
+.#{$namespace}line-list--after-v {
     .#{$namespace}line-item {
         padding-right: 30px;
         @extend %item-v-right;        
     }
 }
 
-
-.#{$namespace}line-list-flex {
+.#{$namespace}line-list--flex {
     .#{$namespace}line-item {
         display: flex;
         align-items: center;
@@ -42,14 +39,14 @@ $lineVIconSwitch:          false !default; // icon v
         .#{$namespace}item-icon,
         .#{$namespace}item-img,
         .#{$namespace}icon-switch,
-        .#{$namespace}badge,
+        .#{$namespace}remind-num,
         .#{$namespace}item-append{
-            margin-right: 12px;
+            margin-right: 10px;
         }
         .#{$namespace}item-tt,
         .#{$namespace}item-bd {
             flex: 1;
-            margin-right: 12px;
+            margin-right: 10px;
             width: 1%;
         }
         .#{$namespace}bd-tt {
@@ -65,7 +62,6 @@ $lineVIconSwitch:          false !default; // icon v
         }
         .#{$namespace}item-append{
             color: $color9;
-            margin-right:21px;
         }
         .#{$namespace}icon-v-right {
             width: 30px;
@@ -75,7 +71,7 @@ $lineVIconSwitch:          false !default; // icon v
             text-align:center;
             line-height:30px;
         }
-        .#{$namespace}badge {
+        .#{$namespace}remind-num {
             position: static;
             line-height: 1.5;
         }
@@ -83,7 +79,7 @@ $lineVIconSwitch:          false !default; // icon v
 }
 
 @if $lineSelectSwitch{
-    .#{$namespace}line-list-select {
+    .#{$namespace}line-list--select {
         .#{$namespace}line-item {
             padding-right: 30px;
             &.#{$namespace}active {
@@ -107,19 +103,11 @@ $lineVIconSwitch:          false !default; // icon v
     }
 }
 @if $lineMutilSelectSwitch{
-    .#{$namespace}line-list-multi-select {
-        .#{$namespace}icon-checkbox{
-               font-size:18px;
-                vertical-align:middle;
-                margin-right:5px;
-            }
+    .#{$namespace}line-list--multi-select {
          .#{$namespace}active{
             color: $primary-color;
              .#{$namespace}icon-checkbox{
                 color: $primary-color;
-                &:before {
-                    content: "\e721";
-                }
             }
         }
     }

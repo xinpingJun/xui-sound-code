@@ -8,8 +8,8 @@ $cardGapSwitch:        true !default; // 使用间隙分割
 
 // 无边框
 .#{$namespace}cards-list{
-	display: flex;
-	flex-wrap: wrap;
+		display: flex;
+		flex-wrap: wrap;
 	.#{$namespace}card-item{
 		position: relative;
 		width: 100% / $carLineNum;
@@ -24,7 +24,7 @@ $cardGapSwitch:        true !default; // 使用间隙分割
 			    width: 100%;
 			    height: 100%;
 	        }
-		}		
+		}
 		.#{$namespace}item-title{
 			line-height:30px;
 	        font-size:14px;
