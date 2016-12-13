@@ -8,8 +8,7 @@
     line-height: 1;
     color: #333;
     background-color: rgba(0,0,0,.15);
-    border-radius: 100px;
-    
+    border-radius: 100px;   
     // 无背景
     &.#{$namespace}badge-inverted {
         padding: 0 5px 0 0;

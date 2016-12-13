@@ -1,0 +1,92 @@
+@charset "UTF-8";
+
+
+// 选项卡
+// ------------------------------------------
+.#{$namespace}tab-list{
+	display:flex;
+	text-align:center;
+	.#{$namespace}tab-item{
+		flex:auto;
+		position:relative;
+		cursor:pointer;
+	}	
+
+}
+
+
+// 顶部选项卡
+// -------------------------------
+.#{$namespace}tab-list-top{
+	line-height:35px;
+	border-top: 1px solid #dbdbdb;
+	border-bottom: 1px solid #dbdbdb;
+	.#{$namespace}tab-item{
+		&.#{$namespace}active{
+			color:$primary-color;
+			@include hairline(single,$primary-color,0,2px); 
+		}
+	}
+}
+
+// 底部选项卡
+// -----------------------------------
+.#{$namespace}tab-list-bottom{
+	height: 48px;
+	background-color: #e0e0e0;
+	// 避免文字不对齐
+	li{
+		position: relative;
+    	cursor: pointer;
+		padding-top:27px;
+	}
+	.#{$namespace}tab-item{
+		.#{$namespace}icon{
+			font-size:18px;
+			color:#969696;
+			display:block;
+			position:absolute;
+			left:50%;
+			top:6px;
+			transform: translate(-50%);
+		}
+		.#{$namespace}item-text{
+			font-size:12px;
+			color:#969696;
+
+		}
+		&.#{$namespace}active{
+			.#{$namespace}icon{
+				color:$primary-color;
+			}
+			.#{$namespace}item-text{
+				color:$primary-color;
+			}
+		}
+
+	}
+}
+
+// 按钮选项卡
+// -------------------------------------
+.#{$namespace}tab-list-circle{
+	line-height:34px;
+	.#{$namespace}tab-item{
+		color:$primary-color;
+		background: #fff;
+	    border: 1px solid #dbdbdb;
+	    border-left-width: 0;
+	    &:first-of-type {
+		    border-left-width: 1px;
+		    border-radius: 16px 0 0 16px;
+		}
+		&:last-of-type {
+		    border-radius: 0 16px 16px 0;
+		}
+		&.#{$namespace}active{
+			background-color:$primary-color;
+			color:#fff;
+		}
+
+	}
+}

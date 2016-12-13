@@ -41,7 +41,7 @@
 		padding-top:27px;
 	}
 	.#{$namespace}tab-item{
-		.#{$namespace}icon{
+		.#{$namespace}item-icon{
 			font-size:18px;
 			color:#969696;
 			display:block;
@@ -56,7 +56,7 @@
 
 		}
 		&.#{$namespace}active{
-			.#{$namespace}icon{
+			.#{$namespace}item-icon{
 				color:$primary-color;
 			}
 			.#{$namespace}item-text{

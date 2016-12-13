@@ -33,7 +33,7 @@ $barHeight:                       44px !default;
 
     }
 
-    .#{$namespace}icon-search {
+    .#{$namespace}search-btn{
         position: absolute;
         top: 0;
         left: 0;
@@ -42,7 +42,7 @@ $barHeight:                       44px !default;
         height: 30px;
         line-height:30px;
         text-align:center;
-        font-size:16px;
+        font-size:18px;
     }
 
     // 删除按钮
@@ -59,7 +59,7 @@ $barHeight:                       44px !default;
             border-radius: $searchRadius;
             color: $colorPlaceholder;
         }
-       .#{$namespace}icon-search{
+      .#{$namespace}search-btn{
             position: relative;
             display: inline-block;
             vertical-align: middle;

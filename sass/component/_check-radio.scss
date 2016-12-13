@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+.#{$namespace}checkbox,.#{$namespace}radio,.#{$namespace}checkbox-blank,.#{$namespace}radio-blank{
+	display:inline-block;
+	height:auto;
+	width:auto;
+	padding:0 4px;
+	text-align:center;
+	-webkit-appearance: none;
+	user-select: none;
+	outline: none;
+	vertical-align:middle;
+	//设置背景色，否则在Ios上会有黑色边框；
+    background-color:transparent;
+	&::after{
+		font-family: "Ionicons";	
+		speak: none;
+	  	font-style: normal;
+	  	font-weight: normal;
+	  	font-variant: normal;
+	  	text-transform: none;
+	  	text-rendering: auto;
+	  	font-size:24px;
+	  	-webkit-font-smoothing: antialiased;
+	  	-moz-osx-font-smoothing: grayscale;
+		color:$primary-color;
+		-webkit-font-smoothing: antialiased;
+	}	
+	&:disabled{
+		opacity:.3;
+	}
+}
+
+
+.#{$namespace}checkbox{
+	&::after{
+		content:"\f372";
+	}
+	&:checked{
+		&::after{
+			content:"\f373";		
+		}
+	}
+}
+
+.#{$namespace}checkbox-blank{
+	&::after{
+		content:"\f371";
+	}
+	&:checked{
+		&::after{
+			content:"\f374";		
+		}
+	}
+}
+
+.#{$namespace}radio{
+	&::after{
+		content:"\f3a6";
+	}
+	&:checked{
+		&::after{
+			content:"\f3a7";		
+		}
+	}
+}
+.#{$namespace}radio-blank{
+	&::after{
+		content:"\f3fe";
+	}
+	&:checked{
+		&::after{
+			content:"\f3ff";		
+		}
+	}
+}
+	

@@ -26,12 +26,12 @@ p {
 
 .#{$namespace}mask{ padding: .1rem;background-color: #fff0d5;}
 
-
 // ul ol dl
 ul, ol, li, dl, dd {
     margin: 0;
     padding: 0;
 }
+
 
 ul, ol {
     list-style: none outside none;

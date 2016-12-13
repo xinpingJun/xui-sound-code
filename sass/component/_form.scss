@@ -2,7 +2,6 @@
 
 
 $formLabelWidth: 90px !default;
-
 $formNoLabelSwitch: true !default;
 
 
@@ -13,8 +12,7 @@ $formNoLabelSwitch: true !default;
     border: 1px solid $colorBorder;
 }
 
-.#{$namespace}f-text{
-    
+.#{$namespace}f-text{   
     height: $barHeight;
     padding: 7px 5px;
     &.#{$namespace}f-text-right-icon{
@@ -99,7 +97,7 @@ $formNoLabelSwitch: true !default;
     transform: translate(0, -50%);
     right: 15px;
     color:#ccc;
-    font-size:16px;
+    font-size:18px;
 }
 // 右边图标按钮
  .#{$namespace}icon-v-right{
@@ -110,7 +108,7 @@ $formNoLabelSwitch: true !default;
         transform: translate(0, -50%);
         right: 0;
         
-        .#{$namespace}icon {
+        .ion-ios-arrow-right{
            color:#ccc;
            font-size:18px;
         }

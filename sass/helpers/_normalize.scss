@@ -26,13 +26,6 @@ html {
  */
 body {
     margin: 0;
-    // 自定义
-    font-size: $font-size-default;
-    font-family: $font-family-default;
-    line-height: $line-height-default;
-    color: $font-color;
-    background-color: $colorBg;
-    min-height: 100%;
 }
 /**
  * Add the correct display in IE 9-.
@@ -207,9 +200,7 @@ audio:not([controls]) {
  * Remove the border on images inside links in IE 10-.
  */
 img {
-    border-style: none;
-    vertical-align: middle;
-    max-width: 100%;
+    border-style: none;  
 }
 /**
  * Hide the overflow in IE.

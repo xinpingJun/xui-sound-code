@@ -9,9 +9,16 @@
     -webkit-user-select: none;//禁止选择文字
     outline: none;
 }
+
 body{
+    font-size: $font-size-default;
+    font-family: $font-family-default;
+    line-height: $line-height-default;
+    color: $font-color;
+    min-height: 100%;
     background-color:#f5f5f5;
 }
+
 // a标签链接
 a {
     color: $primary-color;
@@ -21,7 +28,11 @@ a {
     }
 }
 
-// 主容器 滑动
+img{
+    vertical-align: middle;
+    max-width: 100%;
+}
+// 主容器 
 .#{$namespace}content {
      //background-color: #f5f5f5;
     -webkit-overflow-scrolling: touch;
@@ -33,37 +44,25 @@ a {
     left: 0;
     right: 0;
 }
-
 .#{$namespace}footer{
     bottom:0;
 }
-// 设置主容器和顶部导航header的距离
+
+
+// 设置主容器和顶部导航header ,footer的距离
 .#{$namespace}header ~ .#{$namespace}content {
     padding-top: $barHeight;
-    &.#{$namespace}scroll-wrapper{
-     .#{$namespace}scrollbar-vertical{
-         top:$barHeight;
-     }
-    }
 }
-// 主容器和底部状态栏footer的距离
-
 .#{$namespace}footer ~ .#{$namespace}content {
     padding-bottom: $barHeight;
-     &.#{$namespace}scroll-wrapper{
-     .#{$namespace}scrollbar-vertical{
-         bottom:$barHeight;
-     }
-    }
 }
 
 
-// 实用样式
+// 辅助类
 
 .#{$namespace}content-padded {
       margin: $bar-side-spacing;
 }
-
 .#{$namespace}inline {
     display: inline-block;
     vertical-align: top;
@@ -103,6 +102,7 @@ a {
     display: table-cell;
     position: relative;
 }
+
 .#{$namespace}text-left{
     text-align: left!important;
 }
@@ -126,11 +126,13 @@ a {
     padding-left: 0;
     list-style: none;
 }
+
 .#{$namespace}list-inline {
     padding-left: 0;
     list-style: none;
     margin-left: -5px;
 }
+
 .#{$namespace}list-inline > li {
     display: inline-block;
     padding-left: 5px;
@@ -139,13 +141,4 @@ a {
 
 .#{$namespace}clearfix {
     @include clearfix();
-}
-.#{$namespace}error{
-    margin: 88px 35px;
-    padding:10px;
-    border-radius:6px;
-    background-color:#bbb;
-}
-.#{$namespace}subtitle{
-    font-size: 15px;
 }

@@ -7,25 +7,27 @@
  */ 
 // 基础 辅助文件
 // -----------------------------------
+// 重置
+@import "helpers/normalize";
 // 变量
 @import "helpers/variable";
 //  @include 调用mixin模块---混合
 @import "helpers/mixin";
 // 使用@extend继承 %placeholders 样式
 @import "helpers/extend";
-// 重置
-@import "helpers/normalize";
-// 图标
-@import "helpers/iconfont";
+// Ionicons
+@import "helpers/ionicons";
 // 基础  
 @import  "helpers/base";
 // 文本
 @import  "helpers/type";
 // flex 布局
 @import "helpers/flex";
+// 栅格栏
+@import "helpers/grid";
 
 // ui组件 
-// -------------------------------------
+// ------------------------------------
 // 导航栏样式
 @import "component/header";
 // 按钮样式
@@ -48,6 +50,11 @@
 @import "component/panel";
 // 列表（未查看）
 @import "component/list";
-
 // 图文列表
 @import "component/media";
+// 数字加减
+@import "component/numberBox";
+// 开关
+@import "component/switch";
+// 单复选按钮
+@import "component/check-radio";
