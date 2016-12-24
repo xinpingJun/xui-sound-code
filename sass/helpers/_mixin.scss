@@ -1,6 +1,56 @@
 @charset "UTF-8";
 // Mixins
 // --------------------------------------------------
+// 
+// flex 等分
+// $child 参数请使用单引号，因为用于子元素选择器
+@mixin equal-flex($child: 'li') {
+    display: flex;
+
+    #{unquote($child)} {
+        flex: 1;
+        width: 1%;
+    }
+}
+
+// flex center
+@mixin center-flex($direction: both) {
+    display: flex;
+    @if $direction == both {
+        justify-content: center;
+        align-items: center;
+    }
+    @else if $direction == x {
+        justify-content: center;
+    }
+    @else if $direction == y {
+        align-items: center;
+    }
+}
+
+// fixed top or bottom or bottom & top
+@mixin fixed($pos: 0) {
+    position: fixed;
+    left: 0;
+    right: 0;
+    @if $pos == bottom {
+        bottom: 0;
+    } @else if $pos == all {
+        top: 0;
+        bottom: 0;
+    } @else {
+        top: $pos;
+    }
+}
+
+%fixed-top {
+    @include fixed;
+}
+
+%fixed-bottom {
+    @include fixed(bottom);
+}
+
 // // ellipsis
 @mixin ellipsis($extend: true) {
     @if $extend {
@@ -403,12 +453,11 @@ $z-layers: (
 @mixin btn($color){
     color: #fff;
     background-color: $color;
-    border: 1px solid $color;
-
+    border:none;
     &:enabled:active,
         &.#{$namespace}active:enabled {
         color: #fff;
         background-color: darken($color, 10%);
-        border: 1px solid darken($color, 10%);
+        border: none;
     }
 }

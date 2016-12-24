@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="screen-orientation" content="portrait">
+    <title>MultiPicker</title>
+    <link rel="stylesheet" href="../../css/xui.css">
+    <!-- 插件样式 -->
+    <link rel="stylesheet" type="text/css" href="MultiPicker.css?rev=@@hash"/>
+    <style>
+     .xui-text-center{
+            margin:15px 20px 0 20px;
+        }
+    </style>
+</head>
+
+<body>
+  <header class="xui-header">
+        <div class="xui-header-pull-left"><a href="" class="xui-header-return ion-android-arrow-back"></a></div>
+        <h1 class="xui-title">选择器</h1>
+    </header>
+    <section class="xui-content">
+        <p  class="xui-text-center">使用MultiPicker 选择器需单独加载MultiPicker.css和MultiPicker.js</p>
+        <p class="xui-text-center">插件来源有修改</p>
+        <p class="xui-text-center" style="margin-bottom: 10px;"><a href="https://appianz.github.io/multi-picker/" class="xui-mask">https://appianz.github.io/multi-picker/</a></p>
+       <form class="xui-form"> 
+                <div class="xui-form-item">
+                    <label class="xui-item-label">地址选择器</label>
+                    <div class="xui-item-field" >
+                        <input type="text" class="xui-f-text " id="picker-input-address" placeholder="选择地区">            
+                    </div>
+                </div>
+
+                <div class="xui-form-item">
+                    <label class="xui-item-label">一级选择器</label>
+                    <div class="xui-item-field" >
+                        <input type="text" class="xui-f-text " id="picker-input-1" placeholder="点击选择">            
+                    </div>
+                </div>
+
+                <div class="xui-form-item">
+                    <label class="xui-item-label">二级选择器</label>
+                    <div class="xui-item-field" >
+                        <input type="text" class="xui-f-text " id="picker-input-2" placeholder="点击选择">            
+                    </div>
+                </div>
+                <div class="xui-form-item">
+                    <label class="xui-item-label">三级选择器</label>
+                    <div class="xui-item-field" >
+                        <input type="text" class="xui-f-text " id="picker-input-3" placeholder="点击选择">            
+                    </div>
+                </div>
+                 <div class="xui-form-item">
+                    <label class="xui-item-label">四级选择器</label>
+                    <div class="xui-item-field" >
+                        <input type="text" class="xui-f-text " id="picker-input-4" placeholder="点击选择">            
+                    </div>
+                </div>                  
+         </form>
+    </section>
+
+
+<div id="targetContainer"></div>
+<div id="targetContainer1"></div>
+<div id="targetContainer2"></div>
+<div id="targetContainer3"></div>
+<div id="targetContainer4"></div>
+
+
+
+<script src="city.js"></script>
+<!-- 插件js -->
+<script src="MultiPicker.js"></script>
+<script>
+    //---------------------函数调用开始---------------------
+    new MultiPicker({
+        input: 'picker-input-address',//点击触发插件的input框的id
+        container: 'targetContainer',//插件插入的容器id
+        jsonData: $city,
+        success: function (arr) {
+            document.getElementById('picker-input-address').value = arr[0].value +' '+(arr[1] || {}).value +' '+(arr[2] || {}).value;
+        }//回调
+    });
+    //---------------------函数调用结束---------------------
+
+    // 一级选择器测试json
+    var onepicker = [{value:'小米'},{value:'锤子'},{value:'魅族'},{value:'苹果'},{value:'联想'},]
+
+    new MultiPicker({
+        input: 'picker-input-1',//点击触发插件的input框的id
+        container: 'targetContainer1',//插件插入的容器id
+        jsonData: onepicker,
+        success: function (arr) {
+            console.log(arr[0].value)
+            document.getElementById('picker-input-1').value = arr[0].value;
+        }//回调
+    });
+    // 二级选择器测试json
+        var twopicker = [{
+                          value:'小米手机',
+                          child:[
+                            {
+                                value:'红米'
+                            },                          
+                            {
+                                value:'小米'
+                            },
+
+                          ]},
+                        {
+                          value:'锤子手机',
+                          child:[
+                            {
+                                value:'坚果'
+                            },
+                            {
+                                value:'锤子'
+                            },
+                          ]},
+                          ];
+
+    new MultiPicker({
+        input: 'picker-input-2',//点击触发插件的input框的id
+        container: 'targetContainer2',//插件插入的容器id
+        jsonData: twopicker,
+        success: function (arr) {
+            console.log(arr[0].value)
+            document.getElementById('picker-input-2').value =  arr[0].value  +' '+ (arr[1] || {}).value ;
+        }//回调
+    });
+     // 三级选择器测试json
+            var threepicker = [{
+                          value:'小米手机',
+                          child:[
+                            {
+                                value:'红米',
+                                child:[
+                                    {
+                                        value:'红米pro'
+                                    }
+                                ]
+                            },                          
+                            {
+                                value:'小米'
+                            },
+
+                          ]},
+                        {
+                          value:'锤子手机',
+                          child:[
+                            {
+                                value:'坚果'
+                            },
+                            {
+                                value:'锤子',
+                                child:[
+                                    {
+                                        value:'T1'
+                                    },
+                                    {
+                                        value:'M1'
+                                    }
+                                ]
+
+                            },
+                          ]},
+                        ];
+
+    new MultiPicker({
+        input: 'picker-input-3',//点击触发插件的input框的id
+        container: 'targetContainer3',//插件插入的容器id
+        jsonData: threepicker,
+        success: function (arr) {
+            document.getElementById('picker-input-3').value =  arr[0].value +' '+ (arr[1] || {}).value + ' '+ (arr[2] || {}).value;
+        }//回调
+    });
+    // 三级选择器测试json
+            var fourpicker = [{
+                          value:'小米手机',
+                          child:[
+                            {
+                                value:'红米',
+                                child:[
+                                    {
+                                        value:'红米pro'
+                                    }
+                                ]
+                            },                          
+                            {
+                                value:'小米',
+                                 child:[
+                                            {
+                                                value:'米22'
+                                            }
+                                        ]
+                            },
+
+                          ]},
+                        {
+                          value:'锤子手机',
+                          child:[
+                            {
+                                value:'坚果'
+                            },
+                            {
+                                value:'锤子',
+                                child:[
+                                    {
+                                        value:'T1',
+                                        child:[
+                                            {
+                                                value:'T22'
+                                            }
+                                        ]
+
+                                    },
+                                    {
+                                        value:'M1',
+                                         child:[
+                                            {
+                                                value:'M22'
+                                            }
+                                        ]
+                                    }
+                                ]
+
+                            },
+                          ]},
+                        ];
+
+    new MultiPicker({
+        input: 'picker-input-4',//点击触发插件的input框的id
+        container: 'targetContainer4',//插件插入的容器id
+        jsonData: fourpicker,
+        success: function (arr) {
+            document.getElementById('picker-input-4').value =  arr[0].value +' '+(arr[1]|| {}).value  + ' '+ (arr[2]|| {}).value + ' '+(arr[3] || {}).value;
+        }//回调
+    });
+
+
+
+</script>
+</body>
+</html>

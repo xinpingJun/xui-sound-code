@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>消息框</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+	<link rel="stylesheet" href="../css/xui.css">
+</head>
+<body>
+	<header class="xui-header">
+		<div class="xui-header-pull-left"><a href="" class="xui-header-return ion-android-arrow-back"></a></div>
+		<h1 class="xui-title">消息框</h1>
+	</header>
+	<section class="xui-content xui-content-padded">
+		<button class="xui-btn xui-btn-block btn1" >确认框</button>
+		<button class="xui-btn xui-btn-block btn2">带标题确认框</button>
+		<button class="xui-btn xui-btn-block btn3">确认框列表</button>
+
+		<section class="dialog-wrap xui-hidden" id="box1">
+		    <div class="xui-backdrop"></div>
+		    <div class="dialog">
+		        <div class="dialog-bd">
+		            <p class="bd-txt">提示文案</p>
+		        </div>
+		        <footer class="dialog-ft ft">
+		            <span class="ft-btn">取消</span>
+		            <span class="ft-btn">确定</span>
+		        </footer>
+		    </div>
+		</section>
+
+
+		<section class="dialog-wrap xui-hidden" id="box2">
+		    <div class="xui-backdrop"></div>
+		    <div class="dialog">
+		        <div class="dialog-bd">
+		            <h3 class="bd-tt">标题</h3>
+		            <p class="bd-txt txt--left">提示文案提示文案提示文案提示文案提示文案提示文案提示文案提示文案提示文案</p>
+		        </div>
+		        <footer class="dialog-ft">
+		            <span class="ft-btn">取消</span>
+		            <span class="ft-btn">确定</span>
+		        </footer>
+		    </div>
+		</section>
+
+
+		<section class="dialog-wrap xui-hidden" id="box3">    
+		    <div class="xui-backdrop"></div>
+		    <div class="dialog">
+		        <div class="dialog-bd">
+		            <p class="bd-txt">提示提示提示</p>
+		        </div>
+		        <footer class="dialog-ft ft--full">
+		            <span class="ft-btn">前往评论</span>
+		            <span class="ft-btn">稍后再说</span>
+		            <span class="ft-btn">不，谢谢</span>
+		        </footer>
+		    </div>
+		</section>
+	</section>
+	<script>
+		/*
+		1.点击按钮显示消息框show()
+		2.点击取消隐藏消息框hidden()
+		 */ 
+		var box1 = document.querySelector('#box1');
+		var box2 = document.querySelector('#box2');
+		var box3 = document.querySelector('#box3');
+		var btn1 = document.querySelector('.btn1');
+		var btn2 = document.querySelector('.btn2');
+		var btn3 = document.querySelector('.btn3');
+		var ftbtns = document.querySelectorAll('.ft-btn');
+		for (var i = 0; i < ftbtns.length; i++) {
+			ftbtns[i].addEventListener('click',function(){
+				this.parentNode.parentNode.parentNode.classList.add('xui-hidden');
+			})
+		};
+			btn1.addEventListener('click',function(){
+			box1.classList.remove('xui-hidden')
+		},false)
+			btn2.addEventListener('click',function(){
+			box2.classList.remove('xui-hidden')
+		},false)	
+			btn3.addEventListener('click',function(){
+			box3.classList.remove('xui-hidden')
+		},false)
+ 	</script>
+
+</body>
+</html>

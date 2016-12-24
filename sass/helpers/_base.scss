@@ -142,3 +142,33 @@ img{
 .#{$namespace}clearfix {
     @include clearfix();
 }
+// 遮罩层
+// 
+// Backdrop (used as invisible touch escape)
+// --------------------------------------------------
+
+.#{$namespace}backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: z("backdrop");
+    background-color: rgba(0,0,0,.3);
+}
+
+.#{$namespace}bar-backdrop.#{$namespace}backdrop{
+    bottom: 50px;
+    background:none;
+}
+.#{$namespace}backdrop-action.#{$namespace}backdrop{
+   // bottom:50px;
+    background-color: rgba(0,0,0,.3);
+}
+.#{$namespace}bar-backdrop.#{$namespace}backdrop,.#{$namespace}backdrop-action.#{$namespace}backdrop{
+    opacity:0;
+    &.#{$namespace}active {
+        opacity: 1;
+        @include transition(all 0.4s ease);
+    }
+}

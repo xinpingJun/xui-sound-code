@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>弹出菜单</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+	<link rel="stylesheet" href="../css/xui.css">
+	<style>
+		.m-popover-position{
+			right:5px;
+			top:52px;
+		}
+		.m-popover-position2{
+			left:5px;
+			top:52px;
+		}
+		.m-popover-position3{
+			right:5px;
+
+			top:200px;
+		}
+		.m-popover-position4{
+			left:5px;
+
+			top:200px;
+		}
+		.m-popover-position5{
+			left:5px;
+
+			top:350px;
+		}
+		.m-popover-position6{
+			right:5px;
+
+			top:350px;
+		}
+
+	</style>
+</head>
+<body>
+	<header class="xui-header">
+		<div class="xui-header-pull-left"><a href="" class="xui-header-return ion-android-arrow-back"></a></div>
+		<div class="xui-header-pull-right"><a href="" class="xui-header-btn ion-more"></a></div>
+		<h1 class="xui-title">弹出菜单</h1>
+	</header>
+
+	<section class="xui-content xui-content-padded">
+
+		<button class="xui-btn xui-btn-block backdrop-btn">actionsheet底部确认框</button>
+	</section>
+
+
+	<div  class="xui-popover m-popover-position">	
+			<div class="xui-popover-arrow-top-right"></div>
+			<ul class="xui-line-list ">
+                <li class="xui-line-item">
+                	<a href="" class="xui-line-a"><i class='xui-line-icon ion-android-navigate'></i>首页</a>
+                </li>
+                <li class="xui-line-item">
+                	<a href="" class="xui-line-a"><i class='xui-line-icon ion-android-pin'></i>我的</a>
+                </li>
+                <li class="xui-line-item">
+                	<a href="" class="xui-line-a"><i class='xui-line-icon ion-android-watch'></i>消息</a>
+                </li>
+            </ul>
+
+		</div>
+<!-- 
+		<div  class="xui-popover m-popover-position2">
+			<div class="xui-popover-arrow-top-center"></div>
+			<ul class="xui-line-list xui-line-list-center">
+                <li class="xui-line-item"><a href="" class="xui-line-a">单行列表</a></li>
+                <li class="xui-line-item"><a href="" class="xui-line-a">单行列表</a></li>
+                <li class="xui-line-item"><a href="" class="xui-line-a">单行列表</a></li>
+            </ul>
+		</div>
+		<div  class="xui-popover m-popover-position3">
+			<div class="xui-popover-arrow-top-left"></div>
+			<ul class="xui-line-list xui-line-list-center">
+                <li class="xui-line-item">单行列表</li>
+                <li class="xui-line-item">单行列表</li>
+                <li class="xui-line-item">单行列表</li>
+            </ul>
+		</div>
+
+			弹出菜单 下方
+
+		<div  class="xui-popover m-popover-position4">
+			<div class="xui-popover-arrow-bottom-left"></div>
+			<ul class="xui-line-list xui-line-list-center">
+                <li class="xui-line-item">单行列表</li>
+                <li class="xui-line-item">单行列表</li>
+                <li class="xui-line-item">单行列表</li>
+            </ul>
+		</div>
+		<div  class="xui-popover m-popover-position5">
+			<div class="xui-popover-arrow-bottom-right"></div>
+			<ul class="xui-line-list xui-line-list-center">
+                <li class="xui-line-item">单行列表</li>
+                <li class="xui-line-item">单行列表</li>
+                <li class="xui-line-item">单行列表</li>
+            </ul>
+		</div>
+		<div  class="xui-popover m-popover-position6">
+			<div class="xui-popover-arrow-bottom-center"></div>
+			<ul class="xui-line-list xui-line-list-center">
+                <li class="xui-line-item">单行列表</li>
+                <li class="xui-line-item">单行列表</li>
+                <li class="xui-line-item">单行列表</li>
+            </ul>
+		</div>
+		-->
+		<!--  action-->
+		<div  class="xui-popover-action xui-hidden">
+			<ul class="xui-line-list">
+                <li class="xui-line-item"><a href="" class="xui-line-a">单行列表</a></li>
+                <li class="xui-line-item"><a href="" class="xui-line-a">单行列表</a></li>
+                <li class="xui-line-item"><a href="" class="xui-line-a">单行列表</a></li>
+                <li class="xui-line-item"><a href="" class='xui-line-a xui-action-del'>删除信息</a></li>
+            </ul>
+            <a href="" class="xui-action-cancel ">取消</a>
+		</div>
+		<div class='xui-backdrop xui-hidden'></div>
+		<script>
+			var popoverAction = document.querySelector('.xui-popover-action');
+			var backdrop = document.querySelector('.xui-backdrop');
+			var backdropBtn = document.querySelector('.backdrop-btn');
+			backdropBtn.addEventListener('click',function(){
+				popoverAction.classList.remove('xui-hidden');
+				backdrop.classList.remove('xui-hidden');
+
+			},false)
+		</script>
+</body>
+</html>

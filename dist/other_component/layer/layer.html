@@ -1,0 +1,123 @@
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+		<link rel="stylesheet" href="../../css/xui.css">
+		<style>
+			.xui-btn{
+				margin-right: 5px;
+				margin-bottom: 15px;
+			};
+		</style>
+	</head>
+	<body>
+		<header class="xui-header">
+			<div class="xui-header-pull-left"><a href="" class="xui-header-return ion-android-arrow-back"></a></div>
+			<h1 class="xui-title">弹窗</h1>
+		</header>
+		<section class="xui-content xui-content-padded">
+			<button class="xui-btn btn1">信息框</button>
+			<button class="xui-btn btn2">提示</button>
+			<button class="xui-btn btn3">询问层</button>
+			<button class="xui-btn btn4">底部对话框</button>
+			<button class="xui-btn btn5">底部提示</button>
+			<button class="xui-btn btn6">自定义标题风格</button>
+			<button class="xui-btn btn7" >页面层</button>
+			<button class="xui-btn btn8">loading层</button>
+			<button class="xui-btn btn9">loading带文字层</button>
+			<button class="xui-btn btn10">全屏提示</button>
+		</section>
+		<!-- 插件js -->
+		<script src='layer.js'></script>
+		<script>
+			//信息框
+			document.querySelector('.btn1').addEventListener('click',function(){
+				layer.open({
+			    content: '移动版和PC版不能同时存在同一页面'
+			    ,btn: '我知道了'
+			  });
+			},false)
+			  
+			  
+			  //提示
+			  document.querySelector('.btn2').addEventListener('click',function(){
+			  layer.open({
+			    content: 'hello layer'
+			    ,skin: 'msg'
+			    ,time: 2 //2秒后自动关闭
+			  });
+			  	},false)
+			  //询问框
+			  document.querySelector('.btn3').addEventListener('click',function(){
+			  layer.open({
+			    content: '您确定要刷新一下本页面吗？'
+			    ,btn: ['刷新', '不要']
+			    ,yes: function(index){
+			      location.reload();
+			      layer.close(index);
+			    }
+			  });
+			  	},false)
+			  //底部对话框
+			  document.querySelector('.btn4').addEventListener('click',function(){
+			  layer.open({
+			    content: '这是一个底部弹出的询问提示'
+			    ,btn: ['删除', '取消']
+			    ,skin: 'footer'
+			    ,yes: function(index){
+			      layer.open({content: '执行删除操作'})
+			    }
+			  });
+			  	},false)
+			  //底部提示
+			  document.querySelector('.btn5').addEventListener('click',function(){
+			  layer.open({
+			    content: '一个没有任何按钮的底部提示'
+			    ,skin: 'footer'
+			  });
+			  	},false)
+			  //自定义标题风格
+			  document.querySelector('.btn6').addEventListener('click',function(){
+			  layer.open({
+			    title: [
+			      '我是标题',
+			      'background-color: #FF4351; color:#fff;'
+			    ]
+			    ,content: '标题风格任你定义。'
+			  });
+			  	},false)
+			  //页面层
+			  document.querySelector('.btn7').addEventListener('click',function(){
+			  layer.open({
+			    type: 1
+			    ,content: '可传入任何内容，支持html。一般用于手机页面中'
+			    ,anim: 'up'
+			    ,style: 'position:fixed; bottom:0; left:0; width: 100%; height: 200px; padding:10px 0; border:none;'
+			  });
+			  	},false)
+			  //loading层
+			  document.querySelector('.btn8').addEventListener('click',function(){
+			  layer.open({type: 2});
+			  	},false)
+			  //loading带文字
+			  document.querySelector('.btn9').addEventListener('click',function(){
+			  layer.open({
+			    type: 2
+			    ,content: '加载中'
+			  });
+			  	},false)
+			  	// 全屏提示
+			  document.querySelector('.btn10').addEventListener('click',function(){
+			   layer.open({
+				  type: 1
+				  ,content: '放置网页 div块都可以'
+				  ,anim: 'up'
+				  ,style: 'position:fixed; left:0; top:0; width:100%; height:100%; border: none; -webkit-animation-duration: .5s; animation-duration: .5s;'
+				});
+			   },false)
+		</script>
+
+	</body>
+	</html>

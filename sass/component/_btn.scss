@@ -3,7 +3,7 @@
 
 $btn-radius:2px;
 $button-font-size: 14px !default;
-// Buttons 默认按钮
+// Buttons 默认按钮//   默认透明颜色
 // --------------------------------------------------
 input[type="button"],
 input[type="submit"],
@@ -24,17 +24,18 @@ button,
     cursor: pointer;
     background-color: #fff;
     background-clip: padding-box;
-   // border: 1px solid #ccc;
-    border:none;
+    border: none;
     outline:none;
     border-radius: $btn-radius;
-    
-    // @extend %box-shadow;
 
+    background-color: transparent;
+    color:$primary-color;
+
+    @extend %border-all;
     @include transition(all);
     @include transition-duration(.2s);
     @include transition-timing-function(linear);
-
+   
     // Active & filled button styles
     &:enabled:active,
     &.#{$namespace}active:enabled {
@@ -54,11 +55,8 @@ input[type="submit"],
 .#{$namespace}btn-primary{
     @include btn($primary-color);
 }
-// Outlined buttons  默认透明颜色
-.#{$namespace}btn-outline{
-    background-color: transparent;
-    color:$primary-color;
-}
+
+
 // 链接按钮
 // --------------------------------------------------------
 .#{$namespace}btn-link {
@@ -68,6 +66,7 @@ input[type="submit"],
     background-color: transparent;
     border: 0;
     box-shadow:none;
+    &::before{border:none}
     &:enabled:active,
     &.#{$namespace}active:enabled {
         color: darken($primary-color, 10%);
@@ -92,6 +91,10 @@ input[type="submit"],
     font-size: $button-font-size;
     background-color: rgba(0,0,0,.15);
 }
-
-
+// 注意
+.#{$namespace}btn  i[class^="ion-"]::before{
+    font-size:18px;
+    padding:0 2px; 
+    vertical-align: middle;
+}
 

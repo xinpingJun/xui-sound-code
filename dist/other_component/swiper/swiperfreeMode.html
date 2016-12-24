@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>触摸导航</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+	<link rel="stylesheet" href="../../css/xui.css">
+	<!-- 插件样式 -->
+	<link rel="stylesheet" href="css/swiper.min.css">
+	<style>
+	.swiper-slide {
+	    padding: 0 20px;
+	    width: auto;
+	}
+	/*自定义导航样式*/
+	.freeModeNav{
+		background-color:#009999;
+		height:44px;
+		line-height:44px;
+		color:#fff; 
+	}
+	</style>
+</head>
+<body>
+	<section class="xui-content">
+		<div class="swiper-container freeModeNav" id="swiperFreeMode" >
+			<div class="swiper-wrapper" >
+		      	<div class="swiper-slide">娱乐</div>
+			    <div class="swiper-slide">体育</div>
+			    <div class="swiper-slide">订阅</div>
+			    <div class="swiper-slide">微博</div>
+			    <div class="swiper-slide">空间</div>
+			    <div class="swiper-slide">书城</div>
+		    </div>
+		    <div class="swiper-pagination"></div>
+		</div>
+   
+	</section>
+	<!-- 插件js -->
+	<script src='js/swiper.min.js'></script>
+	<script> 
+		// 必须绑定在swiper-container上
+		var mySwiperFreemode = new Swiper('#swiperFreeMode', {
+		  		freeMode : true,
+	  			slidesPerView : 'auto',
+		})
+	</script>
+
+</body>
+</html>

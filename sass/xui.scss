@@ -13,7 +13,7 @@
 @import "helpers/variable";
 //  @include 调用mixin模块---混合
 @import "helpers/mixin";
-// 使用@extend继承 %placeholders 样式
+// 使用@extend继承 %placeholders 样式 
 @import "helpers/extend";
 // Ionicons
 @import "helpers/ionicons";
@@ -36,7 +36,7 @@
 @import "component/badges";
 // 文章
 @import "component/article";
-// 表单（未查看）
+// 表单（未查看）s
 @import "component/form";
 // 搜索框
 @import "component/search";
@@ -58,3 +58,13 @@
 @import "component/switch";
 // 单复选按钮
 @import "component/check-radio";
+// 进度条
+@import "component/progress";
+// 分页导航
+@import "component/paguination";
+
+// js ui组件
+// 弹出菜单
+@import "component/popover";
+// 消息框（需要修改命名空间）
+@import "component/message";

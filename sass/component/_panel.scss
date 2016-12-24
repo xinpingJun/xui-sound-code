@@ -2,14 +2,14 @@
 
 
 .#{$namespace}card {
-    // margin: 0 15px;
     margin:$card-margin;
     overflow: hidden;
     background-color: $card-bg;
-    // border: $border-default;
     background-clip:padding-box;
     border-radius: $card-border-radius;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+    box-shadow: 0 1px 5px rgba(0,0,0,.2),
+                 0 2px 2px rgba(0,0,0,.14),
+                 0 3px 1px -2px rgba(0,0,0,.12);
     position: relative;
     font-size: $card-font-size;
 }
@@ -139,6 +139,10 @@
 .#{$namespace}card-content {
     position: relative;
     font-size: $card-font-size;
+    .#{$namespace}content-text{
+         padding: 10px 15px;
+         color:#333;
+    }
 }
     
 .#{$namespace}card-content-inner {
@@ -164,6 +168,10 @@
         font-weight: $font-weight;
         color: #333;
         line-height: $font-size-default;
+        h4{
+            font-size:14px;
+            line-height:22px;
+        }
         p {
             font-size: 13px;
             margin-bottom: 0;

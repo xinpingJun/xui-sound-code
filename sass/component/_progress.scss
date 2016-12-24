@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+$progress-radius:10px;
+$progress-height:2px;
+
+.#{$namespace}progress{
+	background:#e9e5e2;  
+	height:$progress-height; 
+
+	.#{$namespace}progress-bar{
+		height:100%; 
+		float:left;
+		background-color:$primary-color;
+		transition: width .6s ease;
+	}	
+}
+
+.#{$namespace}progress-radius{
+	border-radius:$progress-radius;
+	.#{$namespace}progress-bar{
+		border-radius:$progress-radius;
+	}
+}
+

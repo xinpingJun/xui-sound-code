@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>垂直滚动</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+	<link rel="stylesheet" href="../../css/xui.css">
+	<!-- 插件样式 -->
+	<link rel="stylesheet" href="css/swiper.min.css">
+	<!-- 自定义样式 -->
+	<style>
+	/*必须*/
+	html,body{
+		height:100%;
+	}
+	.swiper-container{
+		height:100%;
+		width:100%;
+	}
+	.swiper-slide {
+		height:100%;
+	    color: #000;
+	    text-align: center;
+	    font-size: 50px;
+	    position:relative;
+	}
+	h3{
+		color:#fff;
+	}
+	</style>
+</head>
+<body>
+	
+	<div class="swiper-container">
+	<div class="swiper-wrapper" >
+		<div class="swiper-slide xui-flex xui-flex-center" style='background-color: #CA4040'>
+			<h3>第一屏</h3>
+		</div>
+		<div class="swiper-slide xui-flex xui-flex-center" style='background-color: #4390EE'>
+			<h3>第二屏</h3>
+		
+		</div>
+		<div class="swiper-slide xui-flex xui-flex-center" style='background-color: #FF8604'>
+			<h3>第三屏</h3>
+		
+		</div>
+		 <!-- 如果需要分页器 -->
+	</div>
+	 <div class="swiper-pagination swiper-pagination-bullets"></div>
+</div>
+	<!-- 插件js -->
+	<script src='js/swiper.min.js'></script>
+	<script> 
+		var mySwiper = new Swiper('.swiper-container', {
+			// 垂直
+			direction : 'vertical',
+			// 如果需要分页器
+   			pagination: '.swiper-pagination',
+    
+		})
+	</script>
+
+</body>
+</html>

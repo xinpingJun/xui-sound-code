@@ -1,0 +1,59 @@
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+		<link rel="stylesheet" href="../../css/xui.css">
+		<!-- 插件样式 -->
+		<link rel="stylesheet" href="css/swiper.min.css">
+	</head>
+	<body>
+		<header class="xui-header">
+			<div class="xui-header-pull-left"><a href="" class="xui-header-return ion-android-arrow-back"></a></div>
+			<h1 class="xui-title">轮播图</h1>
+		</header>
+		<section class="xui-content">
+		
+			<div class="swiper-container" id="swiper1">
+				<div class="swiper-wrapper">
+			        <div class="swiper-slide"><img src="../../images/holder.jpg" alt=""></div>
+			        <div class="swiper-slide"><img src="../../images/holder.jpg" alt=""></div>
+			        <div class="swiper-slide"><img src="../../images/holder.jpg" alt=""></div>
+			    </div>
+			    <div class="swiper-pagination"></div>
+			</div> 
+
+			<div class="swiper-container" id="swiper2">
+				<div class="swiper-wrapper">
+			        <div class="swiper-slide"><img src="../../images/holder.jpg" alt=""></div>
+			        <div class="swiper-slide"><img src="../../images/holder.jpg" alt=""></div>
+			        <div class="swiper-slide"><img src="../../images/holder.jpg" alt=""></div>
+			    </div>
+			    <div class="swiper-pagination"></div>
+			    <div class="swiper-button-prev"></div>
+				<div class="swiper-button-next"></div>
+			</div> 	
+
+		</section>
+		<!-- 插件js -->
+		<script src='js/swiper.min.js'></script>
+		<script> 
+			var mySwiper1 = new Swiper('#swiper1', {
+				autoplay: 5000,//可选选项，自动滑动
+				pagination : '.swiper-pagination',
+				loop : true,
+			})
+
+			var mySwiper2 = new Swiper('#swiper2', {
+				autoplay: 5000,//可选选项，自动滑动
+				pagination : '.swiper-pagination',
+				loop : true,
+				prevButton:'.swiper-button-prev',
+				nextButton:'.swiper-button-next',
+				
+			})
+		</script>
+
+	</body>
+	</html>

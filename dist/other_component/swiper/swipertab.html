@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选项卡</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+	<link rel="stylesheet" href="../../css/xui.css">
+	<!-- 插件样式 -->
+	<link rel="stylesheet" href="css/swiper.min.css">
+	<style>
+		.swiper-slide{
+			    height: 300px;
+			    color:#fff;
+		}
+	</style>
+</head>
+<body>
+	<header class="xui-header">
+		<div class="xui-header-pull-left"><a href="" class="xui-header-return ion-android-arrow-back"></a></div>
+		<h1 class="xui-title">选项卡</h1>
+	</header>
+
+	<section class="xui-content">
+			<ul class="xui-tab-list  xui-tab-list-top" id="swiper-tab">
+				<li class="xui-tab-item  xui-active ">
+					选项卡1
+				</li>
+				<li class="xui-tab-item ">
+					选项卡1
+				</li>
+				<li class="xui-tab-item ">
+					选项卡1
+				</li>
+				<li class="xui-tab-item ">
+					选项卡1
+				</li>
+			</ul>
+			
+			<div class="swiper-container " id="swiperTabContainer">
+				<div class="swiper-wrapper" >
+					<div class="swiper-slide xui-flex xui-flex-center" style="background-color: #007aff">
+						选项卡内容1
+					</div>
+					<div class="swiper-slide xui-flex xui-flex-center" style="background-color: #4cd964">
+						选项卡内容2
+					</div>
+					<div class="swiper-slide xui-flex xui-flex-center" style="background-color: #f0ad4e">
+						选项卡内容3
+					</div>
+					<div class="swiper-slide xui-flex xui-flex-center" style="background-color: #dd524d">
+						选项卡内容4
+					</div>
+				
+				</div>
+			</div>
+	</section>
+	<!-- 插件js -->
+	<script src='js/swiper.min.js'></script>
+	<script>
+		// 获取导航按钮
+		var swiperTab = document.querySelector('#swiper-tab');
+		var swiperTabList = swiperTab.querySelectorAll('.xui-tab-item');
+
+		// 初始化
+		var mySwiperTab = new Swiper('#swiperTabContainer',{
+				// 滚动回调函数
+				onSlideChangeStart: function(){
+				 for (var i = 0; i < swiperTabList.length; i++) {
+					 	for (var i = 0; i < swiperTabList.length; i++) {
+						swiperTabList[i].classList.remove('xui-active');					
+					  }
+					  // 获取滑动索引
+				 	swiperTabList[mySwiperTab.activeIndex].classList.add('xui-active');
+				 }			      
+					console.log(mySwiperTab.activeIndex)  
+			    }
+			})	
+		for(i=0;i<swiperTabList.length;i++){
+			// 设置索引
+			swiperTabList[i].index = i;
+			// 点击导航按钮
+			swiperTabList[i].onclick = function(){
+				console.log(this.index)
+				// 设置滚动
+				mySwiperTab.slideTo(this.index, 1000, false);
+				// 清除选中状态
+				for (var i = 0; i < swiperTabList.length; i++) {
+					swiperTabList[i].classList.remove('xui-active');
+				}
+				// 添加选中状态
+				this.classList.add('xui-active');
+			}
+		}
+		/*
+		1.导航栏样式切换
+		2.循环遍历 设置点击事件，清除选中状态样式
+		3.为当前点击添加选中样式
+		4.内容块的切换 为导航设置样式
+		5.在回调函数添加 循环遍历 ，清除选中状态样式
+		6.查找滑动索引 为当前索引添加选中样式
+		 */ 
+	</script>
+</body>
+</html>

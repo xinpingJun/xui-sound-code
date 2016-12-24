@@ -65,7 +65,7 @@ $formNoLabelSwitch: true !default;
                 height:44px;
                 }
         }
-
+// 注意
         .#{$namespace}icon-input-clear{
             height: $barHeight;
         }
@@ -97,8 +97,13 @@ $formNoLabelSwitch: true !default;
     transform: translate(0, -50%);
     right: 15px;
     color:#ccc;
-    font-size:18px;
+    font-size:18px;  
 }
+// 未抽象
+ .ion-close-circled:before {
+       vertical-align: middle;
+       font-size:20px;
+    }
 // 右边图标按钮
  .#{$namespace}icon-v-right{
         position: absolute;
@@ -114,3 +119,51 @@ $formNoLabelSwitch: true !default;
         }
     }
 // 各个表单组件样式
+//show the min and max
+//滑动器
+//
+.#{$namespace}input-range{
+    input[type="range"] {
+        -webkit-appearance: none!important;
+        cursor: pointer;
+        border: 0;
+        outline: none;
+        padding: 0;
+        margin: 17px 0;
+        background-color: #999;
+        height: 2px;
+        border-radius: 3px;
+        position: relative;
+        width:100%;
+    }
+
+    input[type='range']::-webkit-slider-thumb {
+        -webkit-appearance: none!important;
+        background-color:$primary-color;
+        background-clip: padding-box;
+        height:28px;
+        width:28px;
+        border-radius: 50%;
+        border-color: darken($primary-color, 10%);
+    }
+
+    label ~ input[type="range"]{
+        width:65%;
+    }
+    // .#{$namespace}tooltip{
+    //     width: 64px;
+    //     height: 64px;
+    //     font-size: 36px;
+    //     line-height:64px;
+    //     opacity: .8;
+    //     background-color: #fff;
+    //     border:1px solid #ddd;
+    //     border-radius:6px;
+    //     color: #333;
+    //     text-shadow: 0 1px 0 #f3f3f3;
+    //     position:absolute;
+    //     top:-70px;
+    //     text-align:center;
+    //     z-index:z("default");
+    // }
+}

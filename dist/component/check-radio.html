@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>单复选框</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+	<link rel="stylesheet" href="../css/xui.css">
+	<style>
+		h5{
+            margin:15px 0;
+            padding-left: 15px;
+        }
+        .title{
+            font-size:32px;
+            color: #607D8B;
+            margin:25px 0;
+            text-align: center;
+            text-transform:capitalize;
+        }
+      </style>
+</head>
+<body>
+	<header class="xui-header">
+		<div class="xui-header-pull-left"><a href="" class="xui-header-return ion-android-arrow-back"></a></div>
+		<h1 class="xui-title">单复选框</h1>
+	</header>
+	<section class="xui-content">	
+	
+		<ul class="xui-line-list">
+			<li  class="xui-line-item">
+				<label ><input type="checkbox" class="xui-checkbox" checked>复选框</label>
+				<label ><input type="checkbox" class="xui-checkbox">复选框</label>
+				<label ><input type="checkbox" class="xui-checkbox" disabled="disabled">复选框(禁用)</label>
+
+			</li>
+			<li  class="xui-line-item">
+				<label ><input type="radio" class="xui-radio" name="radio1" checked="">单选按钮</label>
+				<label ><input type="radio" class="xui-radio" name="radio1">单选按钮</label>
+				<label ><input type="radio" class="xui-radio" name="radio1" disabled="disabled">单选按钮</label>
+			</li>
+		</ul>
+			<ul class="xui-line-list">
+			<li  class="xui-line-item">
+				<label ><input type="checkbox" class="xui-checkbox-blank" checked>复选框</label>
+				<label ><input type="checkbox" class="xui-checkbox-blank">复选框</label>
+				<label ><input type="checkbox" class="xui-checkbox-blank" disabled="disabled">复选框(禁用)</label>
+
+			</li>
+			<li  class="xui-line-item">
+				<label ><input type="radio" class="xui-radio-blank" name="radio" checked="">单选按钮</label>
+				<label ><input type="radio" class="xui-radio-blank" name="radio">单选按钮</label>
+				<label ><input type="radio" class="xui-radio-blank" name="radio" disabled="disabled">单选按钮</label>
+			</li>
+		</ul>
+		  	<ul class="xui-line-list xui-line-list-select">
+                <li class="xui-line-item">单选列表</li>
+                <li class="xui-line-item xui-active">单选列表</li>
+                <li class="xui-line-item">单选列表</li>
+            </ul>
+
+            <ul class="xui-line-list xui-line-list-multi-select">
+                <li class="xui-line-item"> <label><input type="checkbox" class="xui-checkbox">复选列表</label></li>
+                <li class="xui-line-item xui-active"> <label><input type="checkbox" class="xui-checkbox">复选列表</label></li>
+                <li class="xui-line-item"> <label><input type="checkbox" class="xui-checkbox">复选列表</label></li>
+            </ul>
+
+	</section>
+</body>
+</html>

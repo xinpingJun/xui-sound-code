@@ -18,13 +18,12 @@
 // 顶部选项卡
 // -------------------------------
 .#{$namespace}tab-list-top{
-	line-height:35px;
-	border-top: 1px solid #dbdbdb;
-	border-bottom: 1px solid #dbdbdb;
+	line-height:44px;
+	 @extend %border-tb;
 	.#{$namespace}tab-item{
 		&.#{$namespace}active{
 			color:$primary-color;
-			@include hairline(single,$primary-color,0,2px); 
+			@include hairline(single,$primary-color,0,4px); 
 		}
 	}
 }
@@ -70,7 +69,7 @@
 // 按钮选项卡
 // -------------------------------------
 .#{$namespace}tab-list-circle{
-	line-height:34px;
+	line-height:36px;
 	.#{$namespace}tab-item{
 		color:$primary-color;
 		background: #fff;

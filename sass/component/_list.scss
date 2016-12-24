@@ -7,6 +7,12 @@ $lineVIconSwitch:          false !default; // icon v
 
 .#{$namespace}line-item {
     @extend %bar-line;
+    // 自己新增
+    .#{$namespace}line-a{
+        display:block;
+        height:100%;
+        width:100%;
+    }
 }
 .#{$namespace}line-list {
     background: #fff;

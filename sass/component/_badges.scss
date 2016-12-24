@@ -22,3 +22,10 @@
 }
 // 主题颜色
 // -----暂缺
+.#{$namespace}badge-primary{
+     color: #fff;
+     background-color: $primary-color;
+     &.#{$namespace}badge-border{
+        border:1px solid #9e9e9e;
+    }
+}
