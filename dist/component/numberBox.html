@@ -27,25 +27,43 @@
 
 			<div class="xui-numberBox">
                 <span class="xui-numberBox-minus"></span>
-                <input type="text" class="xui-numberBox-num" placeholder="1">
+                <input type="text" class="xui-numberBox-num"  value='1'>
                 <span class="xui-numberBox-plus"></span>
             </div>
 			     
-			
-
-
 			<div class="xui-numberBox xui-numberBox--circle">
                 <span class="xui-numberBox-minus"></span>
-                <input type="text" class="xui-numberBox-num" placeholder="1">
+                <input type="text" class="xui-numberBox-num" value='0' >
                 <span class="xui-numberBox-plus"></span>
             </div>
 
             
 			<div class="xui-numberBox xui-numberBox--circle-one">
                 <span class="xui-numberBox-minus"></span>
-                <input type="text" class="xui-numberBox-num" placeholder="1">
+                <input type="text" class="xui-numberBox-num" value="1">
                 <span class="xui-numberBox-plus"></span>
             </div>
 	</section>
+	<script>
+		/*
+		1.点击减减1
+		2.点击加加1
+		3.必须大于等于0
+		 */ 
+		var minus = document.querySelector('.xui-numberBox-minus');
+		var plus = document.querySelector('.xui-numberBox-plus');
+		var numberBoxInput  = document.querySelector('.xui-numberBox-num');
+		minus.addEventListener('click',function(){
+			if(numberBoxInput.value>0){
+				numberBoxInput.value = --numberBoxInput.value
+				console.log(numberBoxInput.value) 
+			}	
+		},true)
+
+		plus.addEventListener('click',function(){
+			numberBoxInput.value = ++numberBoxInput.value
+		},true)
+	
+	</script>
 </body>
 </html>

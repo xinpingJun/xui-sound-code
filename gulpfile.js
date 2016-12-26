@@ -15,8 +15,6 @@ gulp.task('sass',function(){
 	.pipe(gulp.dest('./dist/css'));				//输出压缩后的css
 });
 
-
-
 gulp.task('watcher',function(){
 	gulp.watch('./sass/*.scss',['sass'])		//监听所有sass变动 执行sass任务
 })

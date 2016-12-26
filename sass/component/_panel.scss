@@ -179,3 +179,30 @@
 
     }
 }
+$panel-left-width:200px;
+
+// 侧边栏导航  panel-left
+// 右划
+.#{$namespace}panel-left{
+    position:absolute;
+    left:0;
+    top:0;
+    bottom:0;
+    background-color:$primary-color;
+    z-index:z("modal");
+    width:$panel-left-width;
+    transform:translate3d(-$panel-left-width,0,0);
+    transition:transform .3s ease-in-out;
+        &.#{$namespace}active{
+            transform:translate3d(0,0,0);
+        }
+}
+//整体右划 
+.#{$namespace}panel-body{
+    transition:all .3s ease-in-out;
+    &.#{$namespace}panel-body-active{
+         transform:translate3d($panel-left-width,0,0);
+     }
+}
+ 
+ 

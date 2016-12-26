@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+	<link rel="stylesheet" href="../css/xui.css">
+</head>
+<body class='xui-panel-body'>
+	<header class="xui-header">
+		<div class="xui-header-pull-left"><a href="javascript:;" class="xui-header-return ion-navicon-round"></a></div>
+		<h1 class="xui-title">侧边栏导航</h1>
+		<div class="xui-header-pull-right"><a href="javascript:;" class="xui-header-btn">更多</a></div>
+	</header>
+	<section class="xui-content">
+		
+	</section>
+	<footer class="xui-footer">
+		<ul class="xui-tab-list xui-tab-list-bottom">
+			<li class="xui-tab-item xui-active">
+				<span class="xui-item-icon ion-social-github"></span>
+				<p class="xui-item-text">用户</p>
+			</li>
+			<li class="xui-tab-item">
+				<span class="xui-item-icon ion-social-snapchat"></span>
+				<p class="xui-item-text">设置</p>
+			</li>
+			<li class="xui-tab-item">
+				<span class="xui-item-icon ion-social-rss"></span>
+				<p class="xui-item-text">文章</p>
+			</li>
+			<li class="xui-tab-item">
+				<span class="xui-item-icon ion-social-twitter"></span>
+				<p class="xui-item-text">留言</p>
+			</li>
+		</ul>
+	</footer>
+	<aside class="xui-panel-left">
+		  	<ul class="xui-line-list">	
+                <li class="xui-line-item">首页</li>
+                <li class="xui-line-item">列表</li>
+                <li class="xui-line-item">案例</li>
+            </ul>
+            <button class="xui-btn xui-btn-primary" >关闭</button>
+	</aside>
+	<script>
+		document.querySelector('.xui-header-return').addEventListener('click',function(){		
+			document.querySelector('body').classList.toggle('xui-panel-body-active')
+		})
+		document.querySelector('.xui-header-btn').addEventListener('click',function(){
+			document.querySelector('.xui-panel-left').classList.toggle('xui-active');			
+		})
+	</script>
+</body>
+</html>

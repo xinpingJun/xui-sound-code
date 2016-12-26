@@ -77,10 +77,10 @@
 	    border-left-width: 0;
 	    &:first-of-type {
 		    border-left-width: 1px;
-		    border-radius: 16px 0 0 16px;
+		    border-radius: 5px 0 0 5px;
 		}
 		&:last-of-type {
-		    border-radius: 0 16px 16px 0;
+		    border-radius: 0 5px 5px 0;
 		}
 		&.#{$namespace}active{
 			background-color:$primary-color;

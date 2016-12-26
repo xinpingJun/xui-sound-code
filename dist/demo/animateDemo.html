@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>弹出菜单</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+	<link rel="stylesheet" href="../css/animate.css">
+	<link rel="stylesheet" href="../css/xui.css">
+	<style>
+		.animated {
+		  -webkit-animation-duration: 1s;
+		  animation-duration: 1s;
+		  -webkit-animation-fill-mode: both;
+		  animation-fill-mode: both;
+		}
+
+		@keyframes slideInUp {
+		  from {
+		    -webkit-transform: translate3d(0, 100%, 0);
+		    transform: translate3d(0, 100%, 0);
+		    visibility: visible;
+		  }
+
+		  to {
+		    -webkit-transform: translate3d(0, 0, 0);
+		    transform: translate3d(0, 0, 0);
+		  }
+		}
+
+		.slideInUp {
+		  -webkit-animation-name: slideInUp;
+		  animation-name: slideInUp;
+		}
+		/*
+		1从隐藏到显示
+		设置动画
+		 */
+	</style>
+</head>
+<body>
+	<header class="xui-header">
+		<div class="xui-header-pull-left"><a href="" class="xui-header-return ion-android-arrow-back"></a></div>
+		<div class="xui-header-pull-right"><a href="" class="xui-header-btn ion-more"></a></div>
+		<h1 class="xui-title">弹出菜单</h1>
+	</header>
+
+	<section class="xui-content xui-content-padded">
+		<button class="xui-btn xui-btn-block backdrop-btn">actionsheet底部确认框</button>
+	</section>
+
+		<!--  action-->
+		<div  class="xui-popover-action animated xui-hidden">
+			<ul class="xui-line-list">
+                <li class="xui-line-item"><a href="" class="xui-line-a">单行列表</a></li>
+                <li class="xui-line-item"><a href="" class="xui-line-a">单行列表</a></li>
+                <li class="xui-line-item"><a href="" class="xui-line-a">单行列表</a></li>
+                <li class="xui-line-item"><a href="" class='xui-line-a xui-action-del'>删除信息</a></li>
+            </ul>
+            <a href="" class="xui-action-cancel ">取消</a>
+		</div>
+		<div class='xui-backdrop xui-hidden'></div>
+
+
+		<script>
+			var popoverAction = document.querySelector('.xui-popover-action');
+			var backdrop = document.querySelector('.xui-backdrop');
+			var backdropBtn = document.querySelector('.backdrop-btn');
+
+			backdropBtn.addEventListener('click',function(){
+				popoverAction.classList.add('rotateIn');
+				popoverAction.classList.remove('xui-hidden');
+				backdrop.classList.remove('xui-hidden');
+
+			},false)
+		</script>
+</body>
+</html>

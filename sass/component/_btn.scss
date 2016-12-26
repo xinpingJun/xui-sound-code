@@ -5,10 +5,7 @@ $btn-radius:2px;
 $button-font-size: 14px !default;
 // Buttons 默认按钮//   默认透明颜色
 // --------------------------------------------------
-input[type="button"],
-input[type="submit"],
-input[type="reset"],
-button,
+
 .#{$namespace}btn {
     position: relative;
     display: inline-block;
